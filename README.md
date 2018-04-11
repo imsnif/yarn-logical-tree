@@ -1,6 +1,6 @@
 # yarn-logical-tree
 [![Build Status](https://travis-ci.org/imsnif/yarn-logical-tree.svg?branch=master)](https://travis-ci.org/imsnif/yarn-logical-tree) [![Coverage Status](https://coveralls.io/repos/github/imsnif/yarn-logical-tree/badge.svg?branch=master)](https://coveralls.io/github/imsnif/synp?branch=master) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)    
-This package is a wrapper to get[`npm-logical-tree`](https://github.com/npm/npm-logical-tree) working with a `yarn.lock` file - most code and tests are taken from that package. The API is the same except for `address` (and consequently `path`) which is not implemented (if you need `path` / `address` - issues/PRs are very much welcome!)
+This package is a wrapper to get[`npm-logical-tree`](https://github.com/npm/logical-tree) working with a `yarn.lock` file - most code and tests are taken from that package. The API is the same except for `address` (and consequently `path`) which is not implemented (if you need `path` / `address` - issues/PRs are very much welcome!)
 
 ## Install
 
