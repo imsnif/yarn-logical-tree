@@ -176,3 +176,29 @@ test('supports dependency cycles', t => {
   )
   t.done()
 })
+
+test('supports files as versions', t => {
+  const pkg = {
+    dependencies: {
+      'a': '^1.0.0',
+      'b': 'file:dir/pkg'
+    }
+  }
+  const yarnLock = {
+    'a@^1.0.0': {
+      version: '1.0.1'
+    },
+    'b@file:dir/pkg': {
+      version: '2.0.2'
+    }
+  }
+  const logicalTree = yarnLogicalTree(pkg, yarnLock)
+
+  t.ok(logicalTree.getDep('a'), 'dep a is there')
+  t.equal(
+    logicalTree.getDep('b').version,
+    'file:dir/pkg',
+    'dep b has file path as version'
+  )
+  t.done()
+})
