@@ -1,6 +1,6 @@
 {
   "name": "yarn-logical-tree",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "npm-logical-tree for yarn",
   "main": "index.js",
   "scripts": {
