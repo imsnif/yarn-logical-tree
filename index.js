@@ -1,6 +1,7 @@
 'use strict'
 
 const logicalTree = require('npm-logical-tree')
+const semver = require('semver')
 const makeNode = logicalTree.node
 
 module.exports = yarnLogicalTree
@@ -20,6 +21,10 @@ function yarnLogicalTree (pkg, yarnLock) {
       if (!dep) {
         const semverString = pkgDeps[name]
         const depNode = yarnLock[`${name}@${semverString}`]
+        if (!semver.validRange(semverString)) {
+          // eg. file, url, etc.
+          depNode.version = semverString
+        }
         dep = {node: makeNode(name, name, depNode), semverString}
       }
       addChild(dep, {node: tree}, allDeps, yarnLock)
